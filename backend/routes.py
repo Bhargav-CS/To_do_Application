@@ -57,3 +57,20 @@ def login_user(data: dict):
         raise HTTPException(status_code=response.status_code, detail="Invalid login credentials")
     
     return response.json()  # Send token back to frontend
+
+@router.post("/auth/signup")
+def signup_user(data: dict):
+    """Handles user signup by securely creating a new user in Auth0."""
+    signup_payload = {
+        "client_id": AUTH0_CLIENT_ID,
+        "email": data["email"],
+        "password": data["password"],
+        "connection": "Username-Password-Authentication"
+    }
+
+    response = requests.post(f"https://{AUTH0_DOMAIN}/dbconnections/signup", json=signup_payload)
+    
+    if response.status_code != 200:
+        raise HTTPException(status_code=response.status_code, detail="Signup failed")
+    
+    return response.json()  # Send response back to frontend
