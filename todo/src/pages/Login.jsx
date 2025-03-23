@@ -15,7 +15,7 @@ const Login = ({ onLogin }) => {
     setError("");
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/auth/login", {  // 🔹 Send request to backend
+      const response = await axios.post("/auth/login", {  // 🔹 Send request to backend
         email,
         password
       });
