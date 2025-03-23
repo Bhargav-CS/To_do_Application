@@ -13,11 +13,9 @@ const Signup = ({ onSignup }) => {
     setError("");
 
     try {
-      const response = await axios.post("https://dev-jl2vab7n0f15zplh.us.auth0.com/dbconnections/signup", {
-        client_id: "toIjnYmWJrFzqXyBeivfwCoas53GztVm",
+      const response = await axios.post("/auth/signup", {
         email: email,
-        password: password,
-        connection: "Username-Password-Authentication"
+        password: password
       });
 
       if (response.data) {
