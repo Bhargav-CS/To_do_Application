@@ -14,14 +14,9 @@ const Login = ({ onLogin }) => {
     setError("");
 
     try {
-      const response = await axios.post("token", {
-        grant_type: "password",
-        client_id: "client id",
-        client_secret: "secret",
-        audience: "audience",
-        username: email,
-        password: password,
-        scope: "openid profile email"
+      const response = await axios.post("http://127.0.0.1:8000/auth/login", {  // 🔹 Send request to backend
+        email,
+        password
       });
 
       const token = response.data.access_token;
