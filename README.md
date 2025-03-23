@@ -43,6 +43,9 @@
 │   └── index.html
 ```
 
+## Deployment
+The application is deployed at: [https://to-do-application-jjti.onrender.com](https://to-do-application-jjti.onrender.com)
+
 ## Backend
 The backend is built with FastAPI and MongoDB. It handles user authentication and task management.
 
