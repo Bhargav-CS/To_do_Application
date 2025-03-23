@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getTasks, deleteTask, updateTask } from "../api/tasks";
+import "../global/styles.css"; // Import the styles
 
 const TaskList = ({ refresh }) => {
   const [tasks, setTasks] = useState([]);
@@ -24,18 +25,20 @@ const TaskList = ({ refresh }) => {
   };
 
   return (
-    <div>
+    <div className="task-list-container">
       <h2>Tasks</h2>
-      <ul>
+      <ul className="task-list">
         {tasks.map((task) => (
-          <li key={task._id}>
-            <span style={{ textDecoration: task.completed ? "line-through" : "none" }}>
+          <li key={task._id} className="task-item">
+            <span className={task.completed ? "completed" : ""}>
               {task.title}
             </span>
-            <button onClick={() => handleToggle(task)}>
-              {task.completed ? "Undo" : "Complete"}
-            </button>
-            <button onClick={() => handleDelete(task._id)}>Delete</button>
+            <div className="task-buttons">
+              <button onClick={() => handleToggle(task)}>
+                {task.completed ? "Undo" : "Complete"}
+              </button>
+              <button onClick={() => handleDelete(task._id)}>Delete</button>
+            </div>
           </li>
         ))}
       </ul>

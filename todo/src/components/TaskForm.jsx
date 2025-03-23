@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { addTask } from "../api/tasks";
+import "../global/styles.css"; // Import the global CSS file
 
 const TaskForm = ({ onTaskAdded }) => {
   const [title, setTitle] = useState("");
@@ -13,14 +14,15 @@ const TaskForm = ({ onTaskAdded }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="task-form">
       <input
         type="text"
         placeholder="New task..."
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        className="task-input"
       />
-      <button type="submit">Add Task</button>
+      <button type="submit" className="task-button">Add</button>
     </form>
   );
 };

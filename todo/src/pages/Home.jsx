@@ -6,7 +6,7 @@ const Home = () => {
   const [refresh, setRefresh] = useState(false);
 
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <h1>To-Do List</h1>
       <TaskForm onTaskAdded={() => setRefresh(!refresh)} />
       <TaskList refresh={refresh} />
