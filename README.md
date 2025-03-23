@@ -83,12 +83,12 @@ The frontend is built with React and Vite. It provides a user interface for mana
 
 2. **Install dependencies**:
     ```sh
-    npm install
+    yarn install
     ```
 
 3. **Run the development server**:
     ```sh
-    npm run dev
+    yarn dev
     ```
 
 ## Usage
