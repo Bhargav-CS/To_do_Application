@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:8000"; // Update this if backend is hosted
+const API_URL = ""; // Update this if backend is hosted
 
 export const getTasks = async () => {
   const response = await axios.get(`${API_URL}/tasks`);
