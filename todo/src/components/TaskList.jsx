@@ -34,10 +34,18 @@ const TaskList = ({ refresh }) => {
               {task.title}
             </span>
             <div className="task-buttons">
-              <button onClick={() => handleToggle(task)}>
+              <button 
+                onClick={() => handleToggle(task)}
+                style={{ backgroundColor: task.completed ? "blue" : "green", color: "white" }}
+              >
                 {task.completed ? "Undo" : "Complete"}
               </button>
-              <button onClick={() => handleDelete(task._id)}>Delete</button>
+              <button 
+                onClick={() => handleDelete(task._id)} 
+                style={{ backgroundColor: "red", color: "white" }}
+              >
+                Delete
+              </button>
             </div>
           </li>
         ))}
