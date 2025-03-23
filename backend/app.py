@@ -17,7 +17,7 @@ app.add_middleware(
 app.include_router(router)
 
 # Serve the static files from the frontend build
-app.mount("/", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "../todo/dist"), html=True), name="static")
+app.mount("/", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "dist"), html=True), name="static")
 
 @app.get("/")
 def root():
